@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	</head>
+
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="grass" src="./asset/grass1.jpg" />
+				<img id="grass-nm" src="./asset/grass2.jpg" />
+				<img id="sky" src="./asset/Sky.jpg" />
+
+				<a-asset-item
+					id="scene"
+					src="./asset/Cam/scene.gltf"
+				></a-asset-item>
+
+				<a-asset-item
+					id="scene1"
+					src="/asset/binary_system/scene.gltf"
+				></a-asset-item>
+				
+				<a-asset-item
+					id="scene5"
+					src="/asset/wilbur_from_meet_the_robinson_nds/scene.gltf"
+				></a-asset-item>
+
+				<a-asset-item
+					id="scene6"
+					src="./asset/fireball__energy_sphere/scene.gltf"
+				></a-asset-item>
+			</a-assets>
+
+			<!-- Sky -->
+			<a-sky src="#sky" side="double" rotation="0 180 0"> </a-sky>
+
+			<!-- Ground -->
+			<a-plane
+				material="
+                         src: #grass;
+                         repeat: 5 5;
+                         normal-map: #road-nm;
+                         normal-texture-repeat: 5 5"
+				scale="40 20 1"
+				rotation="-90 0 0"
+			>
+			</a-plane>
+
+			<a-entity
+				gltf-model="#scene"
+				position="-7.5 0 0"
+				scale="0.8 0.8 0.8"
+				rotation="0 -90 0"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#scene1"
+				position="25 10 5"
+				scale="0.2 0.2 0.2"
+				rotate="0 0 90"
+			></a-entity>
+
+			
+			<a-entity
+				gltf-model="#scene5"
+				position="-9 0 0.5"
+				scale="2 2 2"
+				rotation="0 90 0"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#scene6"
+				position="30 10 -10"
+				scale="1 1 1"
+			></a-entity>
+
+			<a-entity
+				geometry="primitive: plane"
+				scale="0 0 0"
+				position="-7.5 3 0"
+				sound="src: url(./asset/Theme.mp3); autoplay: true; loop:true"
+			></a-entity>
+			<a-camera position="-5 5 10" ></a-camera>
+
+		</a-scene>
+	</body>
+</html>
